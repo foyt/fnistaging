@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export JAVA_OPTS_EXT="-XX:-UseSplitVerifier"
+
+#echo "Changing JAVA_OPTS"
+#extra_options="-XX:-UseSplitVerifier"
+#memory_options="-client -Xmx256m -XX:MaxPermSize=128m -XX:+AggressiveOpts -Dorg.apache.tomcat.util.LOW_MEMORY=true"
+#export JAVA_OPTS="$extra_options $memory_options -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.node.name=${OPENSHIFT_GEAR_DNS} -Djgroups.bind_addr=${OPENSHIFT_INTERNAL_IP} -Dorg.apache.coyote.http11.Http11Protocol.COMPRESSION=on"
+#echo "Changed JAVA_OPTS: $JAVA_OPTS"

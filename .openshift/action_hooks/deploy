@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Running 01-drop.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" < ${OPENSHIFT_REPO_DIR}/sql/01-drop.sql &&
+echo "Running 02-base.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" fnistaging < ${OPENSHIFT_REPO_DIR}/sql/02-base.sql &&
+echo "Running 03-settings.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" fnistaging < ${OPENSHIFT_REPO_DIR}/sql/03-settings.sql &&
+echo "Running 04-users.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" fnistaging < ${OPENSHIFT_REPO_DIR}/sql/04-users.sql &&
+echo "Running 05-languages.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" fnistaging < ${OPENSHIFT_REPO_DIR}/sql/05-languages.sql &&
+echo "Running 06-publicationfiles.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" fnistaging < ${OPENSHIFT_REPO_DIR}/sql/06-publicationfiles.sql &&
+echo "Running 07-publicationimages.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" fnistaging < ${OPENSHIFT_REPO_DIR}/sql/07-publicationimages.sql &&
+echo "Running 08-books.sql" &&
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" fnistaging < ${OPENSHIFT_REPO_DIR}/sql/08-books.sql &&
+echo "Scripts done"
